@@ -1,0 +1,49 @@
+Yes — for Windows, I’d set it up in a way that works for this exercise now and also saves you time for later Gemini/ADK exercises.
+
+Here’s the practical setup:
+
+- install **Python 3.11 or 3.12**
+- install **Git**
+- install **VS Code** with the Python extension
+- optionally install **Google Cloud CLI** if later exercises need local auth to GCP services
+- create one reusable projects folder, like:
+```powershell
+mkdir C:\udacity
+cd C:\udacity
+```
+
+For each exercise/project, use a virtual environment:
+```powershell
+py -3.11 -m venv .venv
+.venv\Scripts\activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+For this Vertex AI Gemini exercise, the likely prerequisites are:
+- Python
+- the packages in `requirements.txt`
+- a `.env` file with your Google Cloud settings, typically:
+```env
+GOOGLE_CLOUD_PROJECT=your-project-id
+GOOGLE_CLOUD_LOCATION=us-central1
+```
+
+Good “common libraries” you’ll likely keep seeing later in this Nanodegree are things like:
+```bash
+pip install python-dotenv google-genai google-cloud-aiplatform pydantic jupyter
+```
+but for the current exercise, **prefer `requirements.txt` first** so your versions match the lesson.
+
+A few Windows tips:
+- use **PowerShell**, not Command Prompt, if possible
+- if activation is blocked, run:
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+- check Python with:
+```powershell
+python --version
+```
+
+If you want, I can give you a exact step-by-step Windows setup checklist for this exercise, including how to create the `.env`, where to find any needed credentials in Udacity, and how to test that Gemini is working locally.
